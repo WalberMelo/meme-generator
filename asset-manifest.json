@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/WalberMelo/meme-generator/static/css/main.95c45a00.css",
+    "main.js": "/WalberMelo/meme-generator/static/js/main.728c93c8.js",
+    "static/js/787.876f76cf.chunk.js": "/WalberMelo/meme-generator/static/js/787.876f76cf.chunk.js",
+    "static/media/Troll-Face.png": "/WalberMelo/meme-generator/static/media/Troll-Face.ff6c7eca7940f6213496.png",
+    "index.html": "/WalberMelo/meme-generator/index.html",
+    "main.95c45a00.css.map": "/WalberMelo/meme-generator/static/css/main.95c45a00.css.map",
+    "main.728c93c8.js.map": "/WalberMelo/meme-generator/static/js/main.728c93c8.js.map",
+    "787.876f76cf.chunk.js.map": "/WalberMelo/meme-generator/static/js/787.876f76cf.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.95c45a00.css",
+    "static/js/main.728c93c8.js"
+  ]
+}
