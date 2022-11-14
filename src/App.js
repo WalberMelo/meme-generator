@@ -1,11 +1,9 @@
-import Header from "./header/Header.jsx";
-import Meme from "./meme/Meme.jsx";
+import RouterApp from "./Routes/Routes.js";
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Meme />
+      <RouterApp />
     </div>
   );
 }

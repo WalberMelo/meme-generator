@@ -1,0 +1,50 @@
+.header--responsive {
+  background: linear-gradient(90deg, #672280 1.18%, #a626d3 100%);
+  color: white;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.header--image {
+  height: 50px;
+  margin-right: 6px;
+  align-items: center;
+}
+
+.header--title {
+  font-size: 1.8rem;
+  margin-right: auto;
+  font-family: "Poor Story", cursive;
+}
+
+.header--project {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 891px) {
+  .header--image {
+    display: flex;
+    align-items: center;
+    width: 50px;
+    margin-top: 1rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .header--image {
+    display: flex;
+    align-items: center;
+    width: 30px;
+    height: 20px;
+    margin-top: 1.2rem;
+  }
+
+  .header--title {
+    font-size: smaller;
+  }
+}

@@ -1,0 +1,242 @@
+.meme {
+  position: relative;
+  display: grid;
+  grid-template-columns: 7fr 3fr;
+  justify-items: center;
+}
+
+.meme--image {
+  max-width: 100%;
+  height: 100%;
+  border-radius: 3px;
+}
+
+.meme--text {
+  position: absolute;
+  width: 80%;
+  text-align: center;
+  left: 35%;
+  transform: translateX(-50%);
+  margin: 15px 0;
+  padding: 0 5px;
+  font-family: impact, sans-serif;
+  font-size: 2em;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000,
+    -2px 2px 0 #000, 0 2px 0 #000, 2px 0 0 #000, 0 -2px 0 #000, -2px 0 0 #000,
+    2px 2px 5px #000;
+}
+
+/* loading indicator */
+.loading {
+  position: absolute;
+  top: 60%;
+  left: 45%;
+  transform: translate(-50%, -40%);
+  width: 40px;
+  height: 40px;
+  color: rgb(149, 0, 255);
+  background: linear-gradient(currentColor 0 0),
+    linear-gradient(currentColor 0 0), linear-gradient(currentColor 0 0),
+    linear-gradient(currentColor 0 0);
+  background-size: 21px 21px;
+  background-repeat: no-repeat;
+  animation: sh5 1.5s infinite cubic-bezier(0.3, 1, 0, 1);
+}
+@keyframes sh5 {
+  0% {
+    background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+  }
+  33% {
+    background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+    width: 60px;
+    height: 60px;
+  }
+  66% {
+    background-position: 100% 0, 100% 100%, 0 100%, 0 0;
+    width: 60px;
+    height: 60px;
+  }
+  100% {
+    background-position: 100% 0, 100% 100%, 0 100%, 0 0;
+  }
+}
+
+/* Get new meme button */
+.meme--button {
+  margin: 0 auto;
+  width: 80%;
+  height: 3rem;
+  grid-column: 1 / -1;
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-family: "Karla", sans-serif;
+  border-radius: 5px;
+  background: linear-gradient(90.41deg, #711f8d 1.14%, #a818da 100%);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Aside Buttons */
+
+.meme-buttons--container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-row-gap: 0px;
+  margin-left: 1rem;
+}
+
+.aside-button {
+  margin: 0 auto;
+  width: 100%;
+  height: 3rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-family: "Karla", sans-serif;
+  padding: 0 1rem 0 1rem;
+  border-radius: 5px;
+  background: linear-gradient(90.41deg, #711f8d 1.14%, #a818da 100%);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.errorMsg {
+  color: red;
+}
+
+.bottom {
+  bottom: 0;
+}
+
+.top {
+  top: 0;
+}
+
+/* Media queries  */
+
+@media only screen and (max-width: 800px) {
+  .meme_logo {
+    width: 50px;
+  }
+  img {
+    width: 100%;
+  }
+
+  .aside-button {
+    width: 50%;
+    font-size: medium;
+    display: flex;
+  }
+
+  .meme--button {
+    margin: 0 auto;
+    width: 50%;
+    height: 3rem;
+    font-size: medium;
+  }
+
+  .meme {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .meme-buttons--container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-row-gap: 0px;
+    margin-left: 1rem;
+  }
+}
+
+@media only screen and (max-width: 787px) {
+  img {
+    width: 500px;
+  }
+
+  .form-container {
+    display: flex;
+    width: 100%;
+    margin-right: 20%;
+    justify-content: center;
+  }
+
+  .aside-button {
+    width: 50%;
+    font-size: medium;
+    display: flex;
+    margin-left: 40%;
+    margin-top: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 744px) {
+  .meme-buttons--container {
+    width: 50%;
+    font-size: medium;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20%;
+  }
+
+  .aside-button {
+    margin-top: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  img {
+    width: 500px;
+  }
+
+  .aside-button {
+    width: 30%;
+    font-size: small;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .meme-buttons--container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-row-gap: 0px;
+    margin-left: 1rem;
+    margin-top: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 399px) {
+  .aside-button {
+    width: 40%;
+    font-size: small;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .meme-buttons--container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    margin-top: 0.1rem;
+    margin-right: 45%;
+  }
+  .meme_logo {
+    width: 50px;
+  }
+
+  .aside-button {
+    width: 40%;
+    font-size: small;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+}

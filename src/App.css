@@ -15,37 +15,18 @@ main {
   align-content: center;
   align-items: center;
 }
-
-.header {
+.form-container {
   display: flex;
-  align-items: center;
-  height: 65px;
-  background: linear-gradient(90deg, #672280 1.18%, #a626d3 100%);
-  color: white;
-  padding: 20px;
+  width: 100%;
+  margin-left: 20%;
 }
-
-.header--image {
-  height: 100%;
-  margin-right: 6px;
-}
-
-.header--title {
-  font-size: 1.25rem;
-  margin-right: auto;
-}
-
-.header--project {
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-
 .form {
   display: grid;
   width: 50%;
   grid-template: 40px 40px / 1fr 1fr;
   gap: 17px;
   margin-bottom: 17px;
+  margin-bottom: 2rem;
 }
 
 .form--input {
@@ -67,38 +48,62 @@ main {
   cursor: pointer;
 }
 
-.meme {
-  position: relative;
+@media only screen and (max-width: 600px) {
+  img {
+    width: 350px;
+  }
+
+  .form-container {
+    display: flex;
+    margin-right: 30%;
+  }
+
+  .form--button {
+    margin: 0 auto;
+    width: 50%;
+    grid-column: 1 / -1;
+  }
 }
 
-.meme--image {
-  max-width: 100%;
-  height: 600px;
-  border-radius: 3px;
+@media only screen and (max-width: 500px) {
+  .form-container {
+    display: flex;
+    margin-right: 40%;
+  }
 }
 
-.meme--text {
-  position: absolute;
-  width: 80%;
-  text-align: center;
-  left: 50%;
-  transform: translateX(-50%);
-  margin: 15px 0;
-  padding: 0 5px;
-  font-family: impact, sans-serif;
-  font-size: 2em;
-  text-transform: uppercase;
-  color: white;
-  letter-spacing: 1px;
-  text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000,
-    -2px 2px 0 #000, 0 2px 0 #000, 2px 0 0 #000, 0 -2px 0 #000, -2px 0 0 #000,
-    2px 2px 5px #000;
+@media only screen and (max-width: 400px) {
+  img {
+    width: 500px;
+  }
+
+  .form-container {
+    display: flex;
+    margin-left: 0%;
+    margin-right: 40%;
+  }
+
+  .form--button {
+    margin: 0 auto;
+    width: 50%;
+    grid-column: 1 / -1;
+  }
 }
 
-.bottom {
-  bottom: 0;
-}
+@media only screen and (max-width: 399px) {
+  img {
+    width: 300px;
+  }
 
-.top {
-  top: 0;
+  .form-container {
+    display: flex;
+    margin-left: 0%;
+    margin-right: 40%;
+  }
+
+  .form--button {
+    margin: 0 auto;
+    width: 30%;
+    grid-column: 1 / -1;
+  }
 }
