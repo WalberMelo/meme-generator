@@ -7,6 +7,25 @@ body {
   margin: 0;
 }
 
+.App {
+  position: relative;
+}
+
+.background_img {
+  background-image: url("./assets/memes_background.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  width: 90vw;
+  height: 50vw;
+  position: absolute;
+  z-index: -1;
+  margin-left: 4rem;
+}
+
 main {
   display: flex;
   width: 100%;
@@ -32,7 +51,7 @@ main {
 .form--input {
   font-family: "Karla", sans-serif;
   border-radius: 5px;
-  border: 1px solid #d5d4d8;
+  border: 1px solid black;
   text-indent: 5px;
 }
 

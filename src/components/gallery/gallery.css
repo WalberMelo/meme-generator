@@ -1,0 +1,64 @@
+.grid--title {
+  font-size: 2.5rem;
+  margin-left: 2rem;
+  margin-bottom: 0rem;
+  font-family: "Poor Story", cursive;
+  font-weight: 600;
+}
+
+.deleteIcon-grey {
+  display: flex;
+}
+
+.image_container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 1.2rem;
+}
+
+.grid-img--box {
+  display: grid;
+  justify-items: end;
+  align-items: center;
+  padding: 1.2rem;
+  margin-top: 3rem;
+  border-right: 1px solid black;
+}
+
+.grid-img--box:hover {
+  cursor: pointer;
+}
+.grid_img {
+  width: 100%;
+  border-radius: 3px;
+  /* box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset; */
+}
+
+.grid_img {
+  --color: #860f9b; /* the border color */
+  --border: 5px; /* the border thickness*/
+  --offset: 20px; /* control the offset*/
+  --gap: 5px; /* the gap on hover */
+
+  --_c: var(--color) var(--border), #0000 0 calc(100% - var(--border)),
+    var(--color) 0;
+  --_o: calc(3 * var(--offset));
+  padding: calc(var(--gap) + var(--border))
+    calc(var(--gap) + var(--border) + var(--offset))
+    calc(var(--gap) + var(--border) + var(--offset))
+    calc(var(--gap) + var(--border));
+  background: linear-gradient(var(--_c)) var(--_o) var(--_o),
+    linear-gradient(90deg, var(--_c)) var(--_o) var(--_o);
+  background-size: calc(100% - var(--_o)) calc(100% - var(--_o));
+  background-repeat: no-repeat;
+  filter: grayscale(0.4);
+  transition: 0.5s;
+  cursor: pointer;
+}
+.grid_img:hover {
+  background-position: 0px 0px;
+  background-size: calc(100% - var(--offset)) calc(100% - var(--offset));
+  filter: grayscale(0);
+}

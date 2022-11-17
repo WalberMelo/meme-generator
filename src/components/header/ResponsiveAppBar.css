@@ -11,13 +11,13 @@
 
 .header--image {
   height: 50px;
-  margin-right: 6px;
+  margin-right: 1.5rem;
   align-items: center;
 }
 
 .header--title {
   font-size: 1.8rem;
-  margin-right: auto;
+  margin-right: 2rem;
   font-family: "Poor Story", cursive;
 }
 
