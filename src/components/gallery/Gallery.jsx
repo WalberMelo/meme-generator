@@ -7,9 +7,9 @@ import Stack from "@mui/material/Stack";
 
 export default function Created() {
   const [createMeme, setCreateMeme] = React.useState("");
-  const [serverMsg, setServerMsg] = React.useState("");
-  const [successRes, setSuccessRes] = React.useState(false);
-  const [errorRes, setErrorRes] = React.useState(false);
+  const [successMsg, setSuccessMsg] = React.useState("");
+  const [errorMsg, setErrorMsg] = React.useState("");
+  const [open, setOpen] = React.useState(false);
 
   React.useEffect(() => {
     fetch(`http://localhost:4000/meme/getAll`)
@@ -42,32 +42,34 @@ export default function Created() {
   const deleteMeme = async (id) => {
     try {
       const result = axios.delete(`http://localhost:4000/meme/delete/${id}`);
-      setSuccessRes(true);
-      setServerMsg(result.msg);
+      setOpen(true);
+      setSuccessMsg(result.msg);
     } catch (error) {
-      setErrorRes(true);
-      console.log(error);
+      setOpen(true);
+      setErrorMsg(error);
     }
   };
 
-  <Alert severity="error">This is an error alert — check it out!</Alert>;
-  {
-    /* <Alert severity="success">This is a success alert — check it out!</Alert> */
-  }
+  const handleClose = () => {
+    setTimeout(() => {
+      setOpen(false);
+    }, 5000);
+  };
+
+  const ActionAlerts = () => {
+    return (
+      <Stack sx={{ width: "30%" }} spacing={2} onClick={handleClose()}>
+        <Alert onClose={() => handleClose()}>{successMsg}</Alert>
+      </Stack>
+    );
+  };
 
   return (
     <section className="gallery-container">
-      <p className="grid--title ">Meme Gallery</p>
-      {!successRes && (
-        <Stack sx={{ width: "50%" }} spacing={2}>
-          <Alert
-            sx={{ display: "flex", justifyContent: "center" }}
-            severity="error"
-          >
-            This is an error alert — check it out!
-          </Alert>
-        </Stack>
-      )}
+      <div className="gallery-alert">
+        <p className="grid--title ">Meme Gallery</p>
+        <div className="alert-msg">{open && ActionAlerts()}</div>
+      </div>
       <div className="image_container">
         {Array.isArray(createMeme)
           ? createMeme.map((meme) => {
