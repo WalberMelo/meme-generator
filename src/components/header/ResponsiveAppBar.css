@@ -26,6 +26,34 @@
   font-weight: 500;
 }
 
+#root > div > header > div > div > div.MuiBox-root.css-1t6c9ts {
+  flex-direction: row-reverse;
+}
+
+#root
+  > div
+  > header
+  > div
+  > div
+  > div.MuiBox-root.css-1t6c9ts
+  > a:nth-child(2)
+  > button {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+#root
+  > div
+  > header
+  > div
+  > div
+  > div.MuiBox-root.css-1t6c9ts
+  > a:nth-child(1)
+  > button {
+  font-size: 18px;
+  font-weight: 600;
+}
+
 @media only screen and (max-width: 891px) {
   .header--image {
     display: flex;

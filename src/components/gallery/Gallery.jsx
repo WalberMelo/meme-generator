@@ -4,11 +4,11 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import axios from "axios";
 import Alert from "@mui/material/Alert";
 import Stack from "@mui/material/Stack";
+import { useNavigate } from "react-router-dom";
 
 export default function Created() {
+  const navigate = useNavigate();
   const [createMeme, setCreateMeme] = React.useState("");
-  const [successMsg, setSuccessMsg] = React.useState("");
-  const [errorMsg, setErrorMsg] = React.useState("");
   const [open, setOpen] = React.useState(false);
 
   React.useEffect(() => {
@@ -17,36 +17,13 @@ export default function Created() {
       .then((data) => setCreateMeme(data.memes));
   }, []);
 
-  //? Create download image
-  // const exportAsImage = async (imageFileName) => {
-  //   const canvas = await html2canvas(document.getElementById("meme"));
-  //   const image = canvas.toDataURL("image/png", 1.0);
-  //   console.log(image);
-  //   downloadImage(image, imageFileName);
-  // };
-
-  // const downloadImage = (blob, fileName) => {
-  //   const fakeLink = window.document.createElement("a");
-  //   fakeLink.style = "display:none;";
-  //   fakeLink.download = fileName;
-
-  //   fakeLink.href = blob;
-
-  //   document.body.appendChild(fakeLink);
-  //   fakeLink.click();
-  //   document.body.removeChild(fakeLink);
-
-  //   fakeLink.remove();
-  // };
-
   const deleteMeme = async (id) => {
     try {
       const result = axios.delete(`http://localhost:4000/meme/delete/${id}`);
       setOpen(true);
-      setSuccessMsg(result.msg);
+      window.location.reload(true);
     } catch (error) {
-      setOpen(true);
-      setErrorMsg(error);
+      console.log(error);
     }
   };
 
@@ -59,7 +36,7 @@ export default function Created() {
   const ActionAlerts = () => {
     return (
       <Stack sx={{ width: "30%" }} spacing={2} onClick={handleClose()}>
-        <Alert onClose={() => handleClose()}>{successMsg}</Alert>
+        <Alert onClose={() => handleClose()}> Meme removed successfully</Alert>
       </Stack>
     );
   };

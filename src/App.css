@@ -19,11 +19,9 @@ body {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  width: 90vw;
   height: 50vw;
   position: absolute;
   z-index: -1;
-  margin-left: 4rem;
 }
 
 main {
@@ -124,5 +122,19 @@ main {
     margin: 0 auto;
     width: 30%;
     grid-column: 1 / -1;
+  }
+}
+
+@media only screen and (max-width: 399px) and (min-width: 200px) {
+  .background_img {
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
   }
 }

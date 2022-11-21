@@ -86,6 +86,7 @@ function ResponsiveAppBar() {
                     to={page.href}
                     sx={{
                       textDecoration: "none",
+                      fontWeight: 600,
                     }}
                   >
                     {""}
@@ -127,6 +128,7 @@ function ResponsiveAppBar() {
                 to={page.href}
                 sx={{
                   textDecoration: "none",
+                  fontWeight: 600,
                 }}
               >
                 <Button

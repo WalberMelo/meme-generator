@@ -11,7 +11,7 @@ export default function WebShare({ memeUrl }) {
         }}
         onClick={() => console.log("shared successfully!")}
       >
-        <button className="aside-button">Share Meme</button>
+        <button className="aside-button ">Share Meme</button>
       </RWebShare>
     </div>
   );

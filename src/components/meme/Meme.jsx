@@ -193,7 +193,7 @@ function Meme(cloudinary) {
         <div className="meme-buttons--container">
           <div>
             <button
-              className="aside-button"
+              className="aside-button btn-capture"
               type="button"
               onClick={() => {
                 handleScreenshot();
@@ -210,7 +210,7 @@ function Meme(cloudinary) {
           </div>
           <div>
             <button
-              className="aside-button"
+              className="aside-button btn-upload"
               type="button"
               onClick={handleFileUpload}
             >
@@ -226,7 +226,9 @@ function Meme(cloudinary) {
               </Stack>
             )}
           </div>
-          <div>{showShareButton && <WebShare memeUrl={memeLink} />}</div>
+          <div className="btn-share">
+            {showShareButton && <WebShare memeUrl={memeLink} />}
+          </div>
         </div>
       </div>
     </main>
