@@ -4,10 +4,8 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import axios from "axios";
 import Alert from "@mui/material/Alert";
 import Stack from "@mui/material/Stack";
-import { useNavigate } from "react-router-dom";
 
 export default function Created() {
-  const navigate = useNavigate();
   const [createMeme, setCreateMeme] = React.useState("");
   const [open, setOpen] = React.useState(false);
 
@@ -22,6 +20,7 @@ export default function Created() {
       const result = axios.delete(`http://localhost:4000/meme/delete/${id}`);
       setOpen(true);
       window.location.reload(true);
+      console.log(result);
     } catch (error) {
       console.log(error);
     }
